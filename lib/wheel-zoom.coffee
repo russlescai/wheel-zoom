@@ -3,7 +3,6 @@ module.exports =
 
   activate: (state) ->
     atom.workspaceView.on 'mousewheel', @onMouseWheel
-    console.log "wheel-zoom Added mousewheel event"
 
   deactivate: ->
     atom.workspaceView.off()

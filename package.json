@@ -1,0 +1,10 @@
+{
+  "name": "wheel-zoom",
+  "main": "./lib/wheel-zoom",
+  "version": "0.0.1",
+  "description": "Zoom by adjusting textsize with mousewheel and Ctrl",
+  "repository": "https://github.com/russlescai/wheel-zoom",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}

@@ -10,9 +10,11 @@ module.exports =
   serialize: ->
 
   onMouseWheel: (e) ->
-    delta = e.originalEvent.wheelDeltaY;
+    {wheelDeltaX, wheelDeltaY} = e.originalEvent;
     if e.ctrlKey
-      if delta > 0
-        atom.workspaceView.increaseFontSize()
-      else if delta < 0
-        atom.workspaceView.decreaseFontSize()
+      if wheelDeltaY > 0
+        atom.workspace.increaseFontSize()
+        e.preventDefault()
+      else if wheelDeltaY < 0
+        atom.workspace.decreaseFontSize()
+        e.preventDefault()

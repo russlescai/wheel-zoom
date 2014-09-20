@@ -12,9 +12,10 @@ module.exports =
   onMouseWheel: (e) ->
     {wheelDeltaX, wheelDeltaY} = e.originalEvent;
     if e.ctrlKey
+      currentFontSize = atom.config.get("editor.fontSize")
       if wheelDeltaY > 0
-        atom.workspace.increaseFontSize()
-        e.preventDefault()
+        amount = 1
       else if wheelDeltaY < 0
-        atom.workspace.decreaseFontSize()
-        e.preventDefault()
+        amount = -1
+      atom.config.set("editor.fontSize", currentFontSize + amount)
+      e.preventDefault()
